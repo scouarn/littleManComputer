@@ -7,7 +7,6 @@
 
     <title>Little Man Computer</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -25,13 +24,14 @@
         <section>
             <div class="title">Registres et contrôles</div>
             <div class="content">
-                <div>Étape : </div>
-                <input type="text" readonly>
+                <button onclick="step();">Étape suivante</button>
+                <button onclick="reset_regs();">Remise à zéro</button>
 
-                <button>Étape suivante</button>
+                <div>Étape : </div>
+                <input id="reg_ip" class="cell" type="text" readonly>
 
                 <div>Accumulateur : </div>
-                <input type="text" readonly>
+                <input id="reg_acc" class="cell" type="text" readonly>
                 
                 <div>Sortie : </div>
                 <textarea id="output" readonly rows="20" cols="80"></textarea>
@@ -40,8 +40,10 @@
     
         <section>
             <div class="title">Mémoire</div>
-            <div class="content" id="memory"></div>  
-            <script>init_mem();</script>
+            <div class="content">
+                <button onclick="reset_mem();">Remise à zéro</button>
+                <div id="memory">
+            </div>  
         </section>
 
         <section> 
@@ -53,6 +55,9 @@
         </section>
 
     </div> 
+    <script src="script.js"></script>
+    <script>init();</script>
+
 </body>
 </html>
 
