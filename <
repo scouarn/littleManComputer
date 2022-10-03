@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Little Man Computer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <h1 class="box">Comment fonctionne un ordinateur ?</h1> 
+        <h2 class="box">Exemple du Little Man Computer.</h2> 
+        
+        <section id="regs">
+            <div>Étape : </div>
+            <input type="text" readonly>
+
+            <div>Accumulateur : </div>
+            <input type="text" readonly>
+        </section>
+    
+        <section>
+            <div id="memory"></div>  
+            <script>init_mem();</script>
+        </section>
+
+        <section> 
+            <div class="title">Sortie</div>
+            <div class="content">
+                <textarea id="output" readonly rows="20" cols="80"></textarea>
+            </div>
+        </section>
+
+    </div> 
+</body>
+</html>
+

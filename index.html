@@ -8,11 +8,51 @@
     <title>Little Man Computer</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-
 </head>
 
 <body>
-    <h1>Comment fonctionne un ordinateur ?</h1> 
+
+    <header>
+        <h1>Comment fonctionne un ordinateur ?</h1>
+    </header>
+
+    <div id="content">
+        <section>
+            <div class="title">Exemple du Little Man Computer</div>
+            <div class="content"></div>
+        </section>
+
+        <section>
+            <div class="title">Registres et contrôles</div>
+            <div class="content">
+                <div>Étape : </div>
+                <input type="text" readonly>
+
+                <button>Étape suivante</button>
+
+                <div>Accumulateur : </div>
+                <input type="text" readonly>
+                
+                <div>Sortie : </div>
+                <textarea id="output" readonly rows="20" cols="80"></textarea>
+            </div>
+        </section>
+    
+        <section>
+            <div class="title">Mémoire</div>
+            <div class="content" id="memory"></div>  
+            <script>init_mem();</script>
+        </section>
+
+        <section> 
+            <div class="title">Assembleur</div>
+            <div class="content">
+                <textarea rows="20" cols="80"></textarea>
+                <button>Assembler et charger</button>
+            </div>
+        </section>
+
+    </div> 
 </body>
 </html>
 
