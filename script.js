@@ -10,6 +10,7 @@ let acc = 0;
 function step() {
     
     // fetch    
+    println("Étape " + ip);
     const op = memory[ip].value;
     ip = (ip+1) % SIZE;
     
@@ -37,21 +38,33 @@ function reset_regs() {
     update_regs();
 }
 
-function init() {
-    const mem_el = document.getElementById("memory");
+function println(x) {
+    const area = document.getElementById("output");
+    area.value += x + "\n";
 
+    if(area.selectionStart == area.selectionEnd) {
+      area.scrollTop = area.scrollHeight;
+    }
+
+}
+
+function init() {
+
+    const grid = document.getElementById("memory");
     for (let i = 0; i < SIZE; i++) {
         const e = document.createElement("input");
         e.setAttribute("type", "number");
         e.setAttribute("title", "Adresse : "+i);
         e.classList.add("cell");
         e.value = 0; 
-
-        mem_el.appendChild(e);
+    
+        grid.appendChild(e);
         memory.push(e);
     }
-    
-    update_regs();    
+
+    document.getElementById("output").value = "Initialisation\n"; 
+    update_regs();
+
 }
 
 function reset_mem() {

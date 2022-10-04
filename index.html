@@ -26,15 +26,17 @@
             <div class="content">
                 <button onclick="step();">Étape suivante</button>
                 <button onclick="reset_regs();">Remise à zéro</button>
+    
+                <div id="regs"> 
+                    <div class="label">Étape</div>
+                    <input id="reg_ip" class="cell" type="text" readonly>
 
-                <div>Étape : </div>
-                <input id="reg_ip" class="cell" type="text" readonly>
+                    <div class="label">Accumulateur</div>
+                    <input id="reg_acc" class="cell" type="text" readonly>
 
-                <div>Accumulateur : </div>
-                <input id="reg_acc" class="cell" type="text" readonly>
-                
-                <div>Sortie : </div>
-                <textarea id="output" readonly rows="20" cols="80"></textarea>
+                    <div class="label">Historique</div>
+                    <textarea id="output" class="cell" readonly rows="10" cols="10"></textarea>
+                </div>
             </div>
         </section>
     
@@ -42,16 +44,8 @@
             <div class="title">Mémoire</div>
             <div class="content">
                 <button onclick="reset_mem();">Remise à zéro</button>
-                <div id="memory">
+                <table id="memory"></table>
             </div>  
-        </section>
-
-        <section> 
-            <div class="title">Assembleur</div>
-            <div class="content">
-                <textarea rows="20" cols="80"></textarea>
-                <button>Assembler et charger</button>
-            </div>
         </section>
 
     </div> 
