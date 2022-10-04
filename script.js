@@ -66,7 +66,7 @@ function step() {
     let desc;
 
     if (op == 0) {
-        print("HLT : Fin du programme.");
+        print("HLT : J'ai reçu la commande d'arrêt, j'ai terminé !");
     }
     else if (op == 1) {
         const inp = parseInt(prompt("Entrée : ", "0"));
@@ -77,7 +77,7 @@ function step() {
         }
         else {
             acc = 0;
-            print(`INP: J'ai reçu une valeur incorrecte, j'ai entré 0 à la place.`);
+            print(`INP: J'ai reçu une valeur incorrecte ! J'ai entré 0 à la place.`);
         }
 
         next();
@@ -104,7 +104,7 @@ function step() {
 
     }
     else {
-        print("??? : Code instruction invalide (" + op + ")");
+        print("??? : Je ne connais pas ce code d'instruction ! (" + op + ")");
     }
    
     update_regs(); 

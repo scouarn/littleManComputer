@@ -70,18 +70,19 @@ button {
 }
 
 #instructions {
-    background-color: white;
+    background-color: var(--col-title);
     border-collapse: collapse;
     text-align: center;
+    margin: auto;
 }
 
 #instructions, #instructions th, #instructions td {
-    border: solid black 1px; 
+    border: solid gray 2px; 
     padding: 10px;
 }
 
 #instructions tr {
-    height: 2em; 
+    height: 3em; 
 }
 
 
@@ -102,7 +103,7 @@ button {
 #regs .label {
     text-align: right;    
     margin-right: 0.5em;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 #regs input {
@@ -124,9 +125,10 @@ button {
 #memory .cell {
     font-family: monospace;
     font-size: 1.5em;
-    background-color: white;
-    margin: 1px; 
-    border: solid black 1px;
+    background-color: var(--col-title);
+    margin: 3px; 
+    /* border: solid gray 2px;*/
+    border-radius: 5px;
 }
 
 #memory .current {
@@ -145,6 +147,7 @@ button {
     margin: auto;
     margin-bottom: 2px;
     padding: 0;
+    border-radius: 5px;
     font-size: inherit;
     text-align: center;
     font-family: inherit;
