@@ -36,9 +36,9 @@
                 <p>
                     Pour programmer un ordinateur, on lui donne une série d'instructions élémentaires à effectuer (addition, soustraction, déplacer des valeurs dans la mémoire, ...).
                     Dans une architecture de Von Neumann comme le Little Man Computer ou la plupart des ordinateurs,
-                    les instructions sont codés en nombres et mis dans la mémoire, 
+                    les instructions sont codés en des nombres qui sont mis dans la mémoire, 
                     il n'y a donc pas de différence entre les instructions et les données.
-                    Le Little Man Computer a deux cases spéciales séparées de la mémoire qui lui servent à exécuter les instruction (des "registres") : 
+                    Le Little Man Computer a deux cases spéciales séparées de la mémoire qui lui servent à exécuter les instructions (des "registres") : 
                     le compteur d'instruction qui lui dit à quelle instruction il en est
                     et l'accumulateur qui stocke le résultat d'une instruction à l'autre. 
                 </p>
@@ -50,7 +50,7 @@
                 <p>TODO: explication à utiliser sur pc, pas facile à utiliser sur portable</p>
 
                 <p>
-                    Pour effectuer une instruction, on prend le nombre qui se trouve à case dont le numéro est indiqué par le compteur d'instruction
+                    Pour effectuer une instruction, on prend le nombre qui se trouve à la case dont le numéro est indiqué par le compteur d'instruction
                     puis on regarde ce qu'il faut faire dans le tableau ci-dessous. 
                     Ensuite, si ce n'était pas l'instruction Arrêt ou Saut, on va à l'instruction suivante en ajoutant 1 au compteur d'instruction.
                 </p>
@@ -126,19 +126,19 @@
                         <td>600 à 699</td>
                         <td>Saut si zéro</td>
                         <td>BRZ</td>
-                        <td>Si la valeur dans l'accumulateur est égale à zéro, changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code.</td>
+                        <td>Si la valeur de l'accumulateur est égale à zéro, changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code.</td>
                     </tr>
                     <tr>
                         <td>700 à 799</td>
                         <td>Saut si positif</td>
                         <td>BRP</td>
-                        <td>Si la valeur dans l'accumulateur est supérieure ou égale à zéro, changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code.</td>
+                        <td>Si la valeur de l'accumulateur est supérieure ou égale à zéro, changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code.</td>
                     </tr>
                     <tr>
                         <td>800 à 899</td>
                         <td>Saut si négatif</td>
                         <td>BRN</td>
-                        <td>Si la valeur dans l'accumulateur est strictement inférieure à zéro, changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code.</td>
+                        <td>Si la valeur de l'accumulateur est strictement inférieure à zéro, changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code.</td>
                     </tr>
                 </table>
                 
