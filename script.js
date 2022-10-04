@@ -34,7 +34,7 @@ function example(exid) {
     reset_mem();
     
     const example = [
-        [901, 310, 901, 110, 902, 0],
+        [1, 110, 1, 310, 2, 0],
     ][exid];
 
     for (let i = 0; i < 100 && i < example.length; i++)
@@ -68,7 +68,7 @@ function step() {
     if (op == 0) {
         print("HLT : Fin du programme.");
     }
-    else if (op == 901) {
+    else if (op == 1) {
         const inp = parseInt(prompt("Entrée : ", "0"));
 
         if (isFinite(inp)) {
@@ -77,12 +77,12 @@ function step() {
         }
         else {
             acc = 0;
-            print(`INP: J'ai reçu une valeur incorrecte.`);
+            print(`INP: J'ai reçu une valeur incorrecte, j'ai entré 0 à la place.`);
         }
 
         next();
     }
-    else if (op == 902) {
+    else if (op == 2) {
         alert("Sortie : " + acc);
         print(`OUT: J'ai envoyé ${acc} en sortie.`);
         next();
@@ -90,18 +90,18 @@ function step() {
     else if (op >= 100 && op <= 899) { 
         const idx = Math.floor(op/100) - 1;
         const arg = op % 100;
+        next(); // OK with branches
 
-        [   (a) => { acc += mem_get(a);    print(`ADD: J'ai ajouté ${mem_get(a)} à l'accumulateur.`);  },
-            (a) => { acc -= mem_get(a);    print(`SUB: J'ai retiré ${mem_get(a)} de l'accumulateur.`); },
-            (a) => { mem_set(a, acc);      print(`STA: J'ai mis ${acc} à l'adress ${a}.`);     },
-            (a) => { acc = mem_get(a);     print(`LDA: J'ai chargé ${acc} de l'adresse ${a}`); },
-            (a) => { ip = a;               print(`BRA: J'ai sauté à l'adresse ${a}.`);         },
+        [   (a) => { mem_set(a, acc);        print(`STA: J'ai mis ${acc} à l'adress ${a}.`);     },
+            (a) => { acc  = mem_get(a);      print(`LDA: J'ai chargé ${acc} de l'adresse ${a}`); },
+            (a) => { acc += mem_get(a);      print(`ADD: J'ai ajouté ${mem_get(a)} à l'accumulateur.`);  },
+            (a) => { acc -= mem_get(a);      print(`SUB: J'ai retiré ${mem_get(a)} de l'accumulateur.`); },
+            (a) => { ip = a;                 print(`BRA: J'ai sauté à l'adresse ${a}.`);         },
             (a) => { if (acc == 0) { ip = a; print(`BRZ: J'ai sauté à l'adresse ${a}.`); } else { print(`BRZ: Je n'ai pas sauté.`); }  },
             (a) => { if (acc >= 0) { ip = a; print(`BRP: J'ai sauté à l'adresse ${a}.`); } else { print(`BRP: Je n'ai pas sauté.`); }  },
-
+            (a) => { if (acc <  0) { ip = a; print(`BRN: J'ai sauté à l'adresse ${a}.`); } else { print(`BRN: Je n'ai pas sauté.`); }  },
         ][idx](arg);
 
-        next();
     }
     else {
         print("??? : Code instruction invalide (" + op + ")");

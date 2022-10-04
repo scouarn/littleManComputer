@@ -17,12 +17,6 @@ body {
     backdrop-filter: blur(4px);
 }
 
-#content {
-    width: 80%; 
-    margin: auto;
-    padding: 20px;
-}
-
 header {
     width: 80%;
     margin: auto;
@@ -55,7 +49,39 @@ section .content {
     border-radius: 10px;
     margin: auto;
     padding: 10px;
+}
+
+section .content p {
     text-align: justify;
+    text-indent: 3em;
+    margin: auto;
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+button {
+    font-size: 1.2em;
+    height: 2em;
+}
+
+#content {
+    width: 80%; 
+    margin: auto;
+    padding: 20px;
+}
+
+#instructions {
+    background-color: white;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#instructions, #instructions th, #instructions td {
+    border: solid black 1px; 
+    padding: 10px;
+}
+
+#instructions tr {
+    height: 2em; 
 }
 
 
