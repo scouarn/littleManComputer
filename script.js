@@ -112,7 +112,9 @@ function step() {
 }
 
 function repair_value(e) {
-    if (isNaN(parseInt(e.value))) e.value = 0;
+    const n = parseInt(e.value);
+    if (isNaN(n)) e.value = 0;
+    else e.value = Math.floor(n);
 }
 
 function init() {
