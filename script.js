@@ -10,7 +10,7 @@ let acc = 0;
 function step() {
     
     // fetch    
-    println("Étape " + ip);
+    //println("Étape " + ip);
     const op = memory[ip].value;
     ip = (ip+1) % SIZE;
     
@@ -52,17 +52,24 @@ function init() {
 
     const grid = document.getElementById("memory");
     for (let i = 0; i < SIZE; i++) {
-        const e = document.createElement("input");
-        e.setAttribute("type", "number");
-        e.setAttribute("title", "Adresse : "+i);
-        e.classList.add("cell");
-        e.value = 0; 
+        const container = document.createElement("div");
+        container.classList.add("cell");
     
-        grid.appendChild(e);
-        memory.push(e);
+        const label = document.createElement("div");
+        label.innerHTML = i;
+
+        const inp = document.createElement("input");
+        inp.setAttribute("type", "number");
+        inp.value = 0; 
+    
+        container.appendChild(label);
+        container.appendChild(inp);
+    
+        grid.appendChild(container);
+        memory.push(inp);
     }
 
-    document.getElementById("output").value = "Initialisation\n"; 
+    //document.getElementById("output").value = "Initialisation\n"; 
     update_regs();
 
 }

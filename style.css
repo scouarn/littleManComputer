@@ -58,13 +58,6 @@ section .content {
     text-align: justify;
 }
 
-.cell {
-    max-width: 100%;
-    min-width: 0;
-    font-size: 2em;
-    font-family: monospace;
-    text-align: center;
-}
 
 #regs {
     max-width: 500px;
@@ -77,15 +70,20 @@ section .content {
 
 #regs #output {
     text-align: left;
+    font-size: 1.5em;
 }
 
 #regs .label {
     text-align: right;    
     margin-right: 0.5em;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
-
+#regs input {
+    font-size: 2em;
+    text-align: center;
+    font-family: monospace;
+}
 
 
 #memory {
@@ -95,11 +93,33 @@ section .content {
     align-items: center;
 }
 
-#memory .cell.current {
+
+#memory .cell {
+    font-family: monospace;
+    font-size: 1.5em;
+    background-color: white;
+    margin: 1px; 
+    border: solid black 1px;
+}
+
+#memory .current {
     background-color: yellow;
 }
 
+#memory .cell div {
+    padding-left: 3px;
+    text-align: left; 
+}
 
-
-
+#memory .cell input {
+    display: block;
+    min-width: 0;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2px;
+    padding: 0;
+    font-size: inherit;
+    text-align: center;
+    font-family: inherit;
+}
 
