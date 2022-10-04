@@ -111,11 +111,12 @@ function step() {
 
 }
 
+function repair_value(e) {
+    if (isNaN(parseInt(e.value))) e.value = 0;
+}
+
 function init() {
 
-    function repair_value(e) {
-        if (isNaN(parseInt(e.value))) e.value = 0;
-    }
 
     const grid = document.getElementById("memory");
 
