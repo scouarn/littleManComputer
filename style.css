@@ -64,11 +64,11 @@ section .content {
     padding: 10px;
     display: grid;
     grid-template-columns: auto 1fr;
-    align-items: top;
+    align-items: center;
     text-align: center;
 }
 
-#regs #output {
+#regs #log {
     text-align: left;
     font-size: 1.5em;
 }
@@ -80,6 +80,7 @@ section .content {
 }
 
 #regs input {
+    min-width: 0;
     font-size: 2em;
     text-align: center;
     font-family: monospace;

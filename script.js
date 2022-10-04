@@ -4,78 +4,9 @@ const memory = new Array();
 let ip = 0;
 let acc = 0; 
 
-function next() {
-    ip = (ip+1) % 100;
+function print(str) {
+    document.getElementById("log").value = str;
 }
-
-function mem_get(a) {
-    const x = parseInt(memory[a].value);
-    return isFinite(x) ? x : 0; 
-}
-
-function mem_set(a, v) {
-    memory[a].value = v;
-}
-
-function step() {
-    
-    // fetch    
-    //println("Étape " + ip);
-    const op = mem_get(ip);
-    
-    // execute 
-    const ins_1_arg = [
-        { asm: "ADD", f: (a) => { acc += mem_get(a);      } },
-        { asm: "SUB", f: (a) => { acc -= mem_get(a);      } },
-        { asm: "STA", f: (a) => { mem_set(a, acc);        } },
-        { asm: "LDA", f: (a) => { acc = mem_get(a);       } },
-        { asm: "BRA", f: (a) => { ip = a;                 } },
-        { asm: "BRZ", f: (a) => { if (acc == 0) ip = a;   } },
-        { asm: "BRP", f: (a) => { if (acc >= 0) ip = a;   } },
-    ];
-    
-    let asm; 
-   
-    if (op == 0) {
-        alert("Fin du programme"); 
-        asm = "HLT";
-    }
-    else if (op == 901) {
-        asm = "INP";
-        
-        const inp = parseInt(prompt("Entrée : ", "0"));
-
-        if (isFinite(inp))
-            acc = inp;
-        else 
-            acc = 0;
-
-        next();
-    }
-    else if (op == 902) {
-        alert("Sortie : " + acc);
-        asm = "OUT"; 
-        next();
-    }
-    else if (op >= 100 && op <= 899) { 
-        const idx = Math.floor(op/100) - 1;
-        const arg = op % 100;
-        ins_1_arg[idx].f(arg);
-        asm = ins_1_arg[idx].asm;
-        next();
-    }
-    else {
-        alert("Instruction invalide : " + op); 
-        asm = "???";
-        console.log(op);
-    }
-    
-    // display
-    console.log(asm);
-    update_regs();
-
-}
-
 
 function update_regs() {
     
@@ -91,24 +22,100 @@ function reset_regs() {
     ip = 0;
     acc = 0;
     update_regs();
+    print("");
 }
 
-function println(x) {
-    const area = document.getElementById("output");
-    area.value += x + "\n";
+function reset_mem() {
+    for (let e of memory)
+        e.value = 0;
+}
 
-    if(area.selectionStart == area.selectionEnd) {
-      area.scrollTop = area.scrollHeight;
+function example(exid) {
+    reset_mem();
+    
+    const example = [
+        [901, 310, 901, 110, 902, 0],
+    ][exid];
+
+    for (let i = 0; i < 100 && i < example.length; i++)
+        memory[i].value = example[i];
+     
+}
+
+
+function step() {
+    
+    function next() {
+        ip = (ip+1) % 100;
+    }
+    
+    function mem_get(a) {
+        const x = parseInt(memory[a].value);
+        return isFinite(x) ? x : 0; 
+    }
+    
+    function mem_set(a, v) {
+        memory[a].value = v;
     }
 
-}
+    // fetch    
+    const op = mem_get(ip);
 
-function repair_value(e) {
-    if (isNaN(parseInt(e.value))) e.value = 0;
-}
+    // execute
+    let asm; 
+    let desc;
 
+    if (op == 0) {
+        print("HLT : Fin du programme.");
+    }
+    else if (op == 901) {
+        const inp = parseInt(prompt("Entrée : ", "0"));
+
+        if (isFinite(inp)) {
+            acc = inp;
+            print(`INP: J'ai reçu la valeur ${acc}.`);
+        }
+        else {
+            acc = 0;
+            print(`INP: J'ai reçu une valeur incorrecte.`);
+        }
+
+        next();
+    }
+    else if (op == 902) {
+        alert("Sortie : " + acc);
+        print(`OUT: J'ai envoyé ${acc} en sortie.`);
+        next();
+    }
+    else if (op >= 100 && op <= 899) { 
+        const idx = Math.floor(op/100) - 1;
+        const arg = op % 100;
+
+        [   (a) => { acc += mem_get(a);    print(`ADD: J'ai ajouté ${mem_get(a)} à l'accumulateur.`);  },
+            (a) => { acc -= mem_get(a);    print(`SUB: J'ai retiré ${mem_get(a)} de l'accumulateur.`); },
+            (a) => { mem_set(a, acc);      print(`STA: J'ai mis ${acc} à l'adress ${a}.`);     },
+            (a) => { acc = mem_get(a);     print(`LDA: J'ai chargé ${acc} de l'adresse ${a}`); },
+            (a) => { ip = a;               print(`BRA: J'ai sauté à l'adresse ${a}.`);         },
+            (a) => { if (acc == 0) { ip = a; print(`BRZ: J'ai sauté à l'adresse ${a}.`); } else { print(`BRZ: Je n'ai pas sauté.`); }  },
+            (a) => { if (acc >= 0) { ip = a; print(`BRP: J'ai sauté à l'adresse ${a}.`); } else { print(`BRP: Je n'ai pas sauté.`); }  },
+
+        ][idx](arg);
+
+        next();
+    }
+    else {
+        print("??? : Code instruction invalide (" + op + ")");
+    }
+   
+    update_regs(); 
+
+}
 
 function init() {
+
+    function repair_value(e) {
+        if (isNaN(parseInt(e.value))) e.value = 0;
+    }
 
     const grid = document.getElementById("memory");
 
@@ -131,13 +138,9 @@ function init() {
         memory.push(inp);
     }
 
-    //document.getElementById("output").value = "Initialisation\n"; 
+    print("");
     update_regs();
-
 }
 
-function reset_mem() {
-    for (let e of memory)
-        e.value = 0;
-}
+
 

@@ -34,10 +34,8 @@
                     <div class="label">Accumulateur</div>
                     <input id="reg_acc" type="text" readonly>
                 
-                    <!--
-                    <div class="label">Historique</div>
-                    <textarea id="output" readonly rows="10" cols="10"></textarea>
-                    -->
+                    <div class="label">Dernière instruction</div>
+                    <textarea id="log" readonly rows="10" cols="10"></textarea>
                 </div>
             </div>
         </section>
@@ -46,6 +44,11 @@
             <div class="title">Mémoire</div>
             <div class="content">
                 <button onclick="reset_mem();">Remise à zéro</button>
+                <button onclick="example(0);">Exemple addition</button>
+                <button onclick="example(0);">Exemple ---</button>
+                <button onclick="example(0);">Exemple ---</button>
+                <button onclick="example(0);">Exemple ---</button>
+                <button onclick="example(0);">Exemple ---</button>
                 <table id="memory"></table>
             </div>  
         </section>
