@@ -9,7 +9,8 @@ function next() {
 }
 
 function mem_get(a) {
-    return parseInt(memory[a].value);
+    const x = parseInt(memory[a].value);
+    return isFinite(x) ? x : 0; 
 }
 
 function mem_set(a, v) {
@@ -102,6 +103,11 @@ function println(x) {
 
 }
 
+function repair_value(e) {
+    if (isNaN(parseInt(e.value))) e.value = 0;
+}
+
+
 function init() {
 
     const grid = document.getElementById("memory");
@@ -115,6 +121,7 @@ function init() {
 
         const inp = document.createElement("input");
         inp.setAttribute("type", "number");
+        inp.setAttribute("onfocusout", "repair_value(this);");
         inp.value = 0; 
     
         container.appendChild(label);
