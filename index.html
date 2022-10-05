@@ -137,7 +137,7 @@
                         <td>800 à 899</td>
                         <td>Saut si négatif</td>
                         <td>BRN</td>
-                        <td>Si la valeur de l'accumulateur est strictement inférieure à zéro alors changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code. Incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.</td>
+                        <td>Si la valeur de l'accumulateur est strictement inférieure à zéro alors faire BRA, sinon incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.</td>
                     </tr>
                 </table>
                 
@@ -172,11 +172,9 @@
 
 
                 <button onclick="reset_mem();">Remise à zéro mémoire</button>
-                <button onclick="example(0);">Exemple addition</button>
-                <button onclick="example(0);">Exemple ---</button>
-                <button onclick="example(0);">Exemple ---</button>
-                <button onclick="example(0);">Exemple ---</button>
-                <button onclick="example(0);">Exemple ---</button>
+                <button onclick="load_example(examples.add);">Exemple addition</button>
+                <button onclick="load_example(examples.mul);">Exemple multiplication</button>
+                <button onclick="load_example(examples.fib);">Exemple Fibonacci</button>
                 <table id="memory"></table>
             </div>  
         </section>

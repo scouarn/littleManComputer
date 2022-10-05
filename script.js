@@ -1,6 +1,12 @@
 
 const memory = new Array();
 
+const examples = {
+    add: [1, 110, 1, 310, 2, 0],
+    mul: [1, 121, 1, 122, 222, 612, 420, 122, 223, 321, 123, 504, 223, 2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+    fib: [210, 2, 311, 112, 210, 111, 212, 110, 500, 0, 1, 0, 0],
+};
+
 let ip = 0;
 let acc = 0; 
 
@@ -30,16 +36,12 @@ function reset_mem() {
         e.value = 0;
 }
 
-function example(exid) {
-    reset_mem();
-    
-    const example = [
-        [1, 110, 1, 310, 2, 0],
-    ][exid];
 
-    for (let i = 0; i < 100 && i < example.length; i++)
-        memory[i].value = example[i];
-     
+function load_example(e) {
+    reset_mem();
+
+    for (let i = 0; i < 100 && i < e.length; i++)
+        memory[i].value = e[i];
 }
 
 
