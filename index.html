@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Little Man Computer</title>
 </head>
@@ -22,34 +22,30 @@
                     Le Little Man Computer est un modèle éducatif d'ordinateur qui a été inventé dans les années 60 par le Dr. Stuart Madnick.
                     Il s'agit d'une pièce dans laquelle il y a un petit bonhomme, 100 boîtes à lettres
                     numérotées de 0 à 99 et quatre boîtes spéciales marquées Entrée, Sortie, Compteur d'instruction et Accumulateur.
-                    Le numéro d'une boîte est ce qu'on appelle son adresse.
-                </p>
-                <p>
-                    De manière générale les ordinateurs ne savent utiliser que des 1 et des 0 mais pour des raisons de simplicité le Little Man Computer utilise
-                    aussi des 2, des 3, des 4, des 5, des 6, des 7, des 8 et même des 9. 
                     Sur cette page vous pourrez simuler le fonctionnement d'un Little Man Computer.
                 </p>
-
+                
                 <p>
                     Les boîtes représentent la mémoire du Little Man Computer.
-                    Quand on dit "la valeur à l'adresse A", c'est la même chose que "le nombre qui est dans la boîte numéro A".
-                    Dans les ordinateurs modernes il y a bien plus de 100 cases, par exemple dans celui que j'utilise il y en a précisément 16241912.
+                    Le numéro d'une boîte est ce qu'on appelle son adresse, donc lorsque l'on dit "la valeur à l'adresse A", 
+                    c'est la même chose que "le nombre qui est dans la boîte numéro A".
+                    Les ordinateurs modernes ont bien plus de 100 cases dans leur mémoire, par exemple celui que j'utilise en a précisément 16241912.
+                    Les deux boîtes spéciales entrée et sortie permettent au Little Man Computer de communiquer avec l'extérieur de la pièce,
+                    c'est avec le même système que l'on interagit avec les ordinateurs lorsque l'on utilise un clavier ou un écran.
                 </p> 
 
                 <p>
                     Pour programmer l'ordinateur, on lui donne une série d'instructions élémentaires à effectuer (addition, soustraction, déplacer des valeurs dans la mémoire, ...).
                     Ces instructions sont codés en nombres qui sont mis dans la mémoire, 
                     il n'y a donc pas de différence entre les instructions et les données.
-                </p>
 
-                <p>
-                    Pour utiliser l'ordinateur, le petit bonhomme a un tableau avec des instruction.
+                    Pour faire fonctionner l'ordinateur, le petit bonhomme a un tableau qui explique le codage des instructions.
                     D'abord, il prend le nombre qui se trouve dans la boîte dont le numéro est indiqué par le compteur d'instruction.
                     Ensuite il regarde dans le tableau l'action qu'il doit effectuer.
                     Enfin, il passe à l'instruction suivante en ajoutant 1 au compteur d'instruction.
                 </p>
 
-                <p>TODO: sources</p>
+                <p>Plus d'informations sur la <a href="https://fr.wikipedia.org/wiki/Little_man_computer" target="_blank">page Wikipédia</a> à propos du Little Man Computer.</p>
            	</div>
         </section>
 
@@ -59,7 +55,7 @@
             <div class="content">
                 <p>
                    Plusieurs personnes ont codé de différentes manières les instructions de leur Little Man Computer, 
-                   mais tout le monde est d'accord pour les représenter par des nombres entre 0 et 999 
+                   mais tout le monde est d'accord pour les représenter par des nombres entre 0 et 999,
                    avec les deux derniers chiffre qui peuvent donner un numéro de boîte. 
                    Voilà les instructions qu'utilise ma version du Little Man Computer :
                 </p>
@@ -147,9 +143,8 @@
             <div class="title">Le simulateur</div>
             <div class="content">
                 <p>
-                    La case jaune indique la case pointée par 
-                    le compteur d'instruction, c'est l'instruction qui va être effectuée
-                    en cliquant sur le bouton "Instruction suivante". 
+                    La case jaune est celle que pointe le compteur d'instruction, 
+                    c'est l'instruction qui va être effectuée en cliquant sur le bouton "Instruction suivante". 
                     À chaque instruction un message apparaît pour expliquer ce qu'il vient de se produire.
                     Le bouton "Remise à zéro" met des zéros dans le compteur et dans l'accumulateur
                     mais pas la mémoire.

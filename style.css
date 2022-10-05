@@ -4,10 +4,9 @@
   --col-content: rgb(150,140,140);
 }
 
+
 body {
     font-family: "Arial", sans-serif;
-    margin: auto;
-
     background-color: gray;
     background-image: url("bg.jpg");
     background-position: center;

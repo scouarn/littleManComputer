@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.6.12)  5 OCT 2022 13:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.6.12)  5 OCT 2022 14:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -402,28 +402,28 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen183
 \Gm@dimlist=\toks31
 )
-(/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
-rs
-\f@nch@headwidth=\skip57
-\f@nch@O@elh=\skip58
-\f@nch@O@erh=\skip59
-\f@nch@O@olh=\skip60
-\f@nch@O@orh=\skip61
-\f@nch@O@elf=\skip62
-\f@nch@O@erf=\skip63
-\f@nch@O@olf=\skip64
-\f@nch@O@orf=\skip65
-)
 (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \col@sep=\dimen184
 \ar@mcellbox=\box61
 \extrarowheight=\dimen185
 \NC@list=\toks32
-\extratabsurround=\skip66
-\backup@length=\skip67
+\extratabsurround=\skip57
+\backup@length=\skip58
 \ar@cellbox=\box62
+)
+(/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
+rs
+\f@nch@headwidth=\skip59
+\f@nch@O@elh=\skip60
+\f@nch@O@erh=\skip61
+\f@nch@O@olh=\skip62
+\f@nch@O@orh=\skip63
+\f@nch@O@elf=\skip64
+\f@nch@O@erf=\skip65
+\f@nch@O@olf=\skip66
+\f@nch@O@orf=\skip67
 )
 (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
@@ -535,7 +535,7 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
-8.
+7.
 (/usr/share/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -598,7 +598,7 @@ main.aux) )
 Here is how much of TeX's memory you used:
  10347 strings out of 478238
  178274 string characters out of 5850456
- 548156 words of memory out of 5000000
+ 548179 words of memory out of 5000000
  28409 multiletter control sequences out of 15000+600000
  499791 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -606,7 +606,7 @@ Here is how much of TeX's memory you used:
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texm
 f-dist/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (1 page, 98616 bytes).
+Output written on main.pdf (1 page, 98860 bytes).
 PDF statistics:
  27 PDF objects out of 1000 (max. 8388607)
  15 compressed objects within 1 object stream

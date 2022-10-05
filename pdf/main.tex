@@ -4,8 +4,7 @@
 
 \usepackage[a4paper,portrait,left=2cm,right=2cm,top=1.5cm,bottom=2.0cm]{geometry}
 
-% footer
-\usepackage{fancyhdr}
+
 
 % table
 \usepackage{array}
@@ -14,18 +13,19 @@
 \renewcommand{\arraystretch}{1.2}
 
 % footer
+\usepackage{fancyhdr}
 \thispagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\rfoot{\textsf{Josselin SCOUARNEC, 2022}}    
+\rfoot{\textsf{Josselin SCOUARNEC, 2022, }\texttt{contact@scouarn.fr}}    
 \cfoot{}
 \lfoot{}
 
 
 \begin{document}
 
-% \pic{qrcode.png}
 \sffamily
+% \pic{qrcode.png}
 
 \begin{center}
     \LARGE\textbf{Comment fonctionne un ordinateur ?} \\
@@ -38,7 +38,7 @@ Il s'agit d'une pièce dans laquelle il y a un petit bonhomme, 100 boîtes à le
 numérotées de 0 à 99 et quatre boîtes spéciales marquées \enquote{Entrée}, \enquote{Sortie}, \enquote{Compteur d'instruction} et \enquote{Accumulateur}.
 Le numéro d'une boîte est ce qu'on appelle son adresse.
 \par
-Pour utiliser l'ordinateur, le petit bonhomme a un tableau avec des instruction.
+Pour faire fonctionner l'ordinateur, le petit bonhomme a un tableau qui explique le codage des instructions.
 D'abord, il prend le nombre qui se trouve dans la boîte dont le numéro est indiqué par le compteur d'instruction.
 Ensuite il regarde dans le tableau l'action qu'il doit effectuer.
 Enfin, il passe à l'instruction suivante en ajoutant 1 au compteur d'instruction.
