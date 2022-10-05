@@ -64,8 +64,8 @@ Enfin, il passe à l'instruction suivante en ajoutant 1 au compteur d'instructio
     000       & Arrêt           & HLT & Arrêter l'exécution du programme, le numéro d'instruction n'est pas incrémenté. \\
     \hline 001       & Entrée          & INP & Prendre le nombre qui est dans la boîte d'entrée et le mettre dans l'accumulateur. \\
     \hline 002       & Sortie          & OUT & Prendre le nombre qui est dans l'accumulateur dans le mettre dans boîte de sortie. \\
-    \hline 100 à 199 & Sauvegarde      & STA & Remplacer la valeur à l'adresse formée par les deux derniers chiffres du code par le contenu de l'accumulateur. \\
-    \hline 200 à 299 & Chargement      & LDA & Remplacer le contenu de l'accumulateur par la valeur à l'adresse formée par les deux derniers chiffres du code. \\
+    \hline 100 à 199 & Sauvegarde      & STA &  Prendre le nombre qui est dans l'accumulateur et le mettre à l'adresse formée par les deux derniers chiffres du code par le contenu de l'accumulateur. \\
+    \hline 200 à 299 & Chargement      & LDA & RPrendre le nombre dans la boîte à l'adresse formée par les deux derniers chiffres du code et le mettre dans l'accumulateur. \\
     \hline 300 à 399 & Addition        & ADD & Ajouter à l'accumulateur la valeur à l'adresse formée par les deux derniers chiffres du code. \\
     \hline 400 à 499 & Soustraction    & SUB & Soustraire à l'accumulateur la valeur à l'adresse formée par les deux derniers chiffres du code. \\
     \hline 500 à 599 & Saut            & BRA & Mettre dans le compteur d'instruction le nombre formé par les deux derniers chiffres du code. Ne pas incrémenter le compteur d'instruction. \\
