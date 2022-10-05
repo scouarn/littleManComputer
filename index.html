@@ -21,26 +21,26 @@
             <div class="content">
                 <p> 
                     Le Little Man Computer est un modèle éducatif d'ordinateur qui a été inventé dans les années 60 par le Dr. Stuart Madnick.
+                    Il s'agit d'une pièce dans laquelle un petit bonhomme est enfermé avec 100 boîtes aux lettres
+                    numérotées de 0 à 99 et quatre boîtes spéciales marquées Entrée, Sortie, Numéro d'instruction et Accumulateur.
+                    Le numéro d'une boîte est ce qu'on appelle sont adresse.
+                </p>
+                <p>
                     De manière générale les ordinateurs ne savent utiliser que des 1 et des 0 mais pour des raisons de simplicité le Little Man Computer utilise
                     aussi des 2, des 3, des 4, des 5, des 6, des 7, des 8 et même des 9. 
                     Sur cette page vous pourrez simuler le fonctionnement d'un Little Man Computer.
                 </p>
 
                 <p>
-                    La mémoire du Little Man Computer est constituée de 100 cases numérotées de 0 à 99.
-                    Le numéro au dessus de chaque case est ce que l'on appelle son adresse.
-                    Quand on dit "la valeur à l'adresse A", c'est la même chose que "le nombre qui est dans la case numéro A".
+                    Les boîtes représentent la mémoire du Little Man Computer.
+                    Quand on dit "la valeur à l'adresse A", c'est la même chose que "le nombre qui est dans la boîte numéro A".
                     Dans les ordinateurs modernes il y a bien plus de 100 cases, par exemple dans celui que j'utilise il y en a précisément 16241912.
                 </p> 
 
                 <p>
-                    Pour programmer un ordinateur, on lui donne une série d'instructions élémentaires à effectuer (addition, soustraction, déplacer des valeurs dans la mémoire, ...).
-                    Dans une architecture de Von Neumann comme le Little Man Computer ou la plupart des ordinateurs,
-                    les instructions sont codés en des nombres qui sont mis dans la mémoire, 
+                    Pour programmer l'ordinateur, on lui donne une série d'instructions élémentaires à effectuer (addition, soustraction, déplacer des valeurs dans la mémoire, ...).
+                    Ces instructions sont codés en nombres qui sont mis dans la mémoire, 
                     il n'y a donc pas de différence entre les instructions et les données.
-                    Le Little Man Computer a deux cases spéciales séparées de la mémoire qui lui servent à exécuter les instructions (des "registres") : 
-                    le compteur d'instruction qui lui dit à quelle instruction il en est
-                    et l'accumulateur qui stocke le résultat d'une instruction à l'autre. 
                 </p>
 
                 <p>TODO: explication pourquoi "little man"</p>
@@ -50,9 +50,10 @@
                 <p>TODO: sources</p>
 
                 <p>
-                    Pour effectuer une instruction, on prend le nombre qui se trouve à la case dont le numéro est indiqué par le compteur d'instruction
-                    puis on regarde ce qu'il faut faire dans le tableau ci-dessous. 
-                    Ensuite, si ce n'était pas l'instruction Arrêt ou Saut, on va à l'instruction suivante en ajoutant 1 au compteur d'instruction.
+                    Pour utiliser l'ordinateur, le petit bonhomme a à disposition un tableau avec des instruction.
+                    D'abord, il prend le nombre qui se trouve dans la boîte dont le numéro est indiqué par le compteur d'instruction.
+                    Ensuite il regarde dans le tableau l'action qu'il doit effectuer.
+                    Enfin, si ce n'était pas l'instruction Arrêt ou Saut, il passe à l'instruction suivante en ajoutant 1 au compteur d'instruction.
                 </p>
            	</div>
         </section>
@@ -64,7 +65,7 @@
                 <p>
                    Plusieurs personnes ont codé de différentes manières les instructions de leur Little Man Computer, 
                    mais tout le monde est d'accord pour les représenter par des nombres entre 0 et 999 
-                   avec les deux derniers chiffre qui peuvent donner un numéro de case. 
+                   avec les deux derniers chiffre qui peuvent donner un numéro de boîte. 
                    Voilà les instructions qu'utilise ma version du Little Man Computer :
                 </p>
                 <table id="instructions">
@@ -84,13 +85,13 @@
                         <td>001</td>
                         <td>Entrée</td>
                         <td>INP</td>
-                        <td>Demander à l'utilisateur d'entrer un nombre et le mettre dans l'accumulateur.</td>
+                        <td>Prendre le nombre qui est dans la boîte d'entrée et le mettre dans l'accumulateur.</td>
                     </tr>
                     <tr>
                         <td>002</td>
                         <td>Sortie</td>
                         <td>OUT</td>
-                        <td>Donner à l'utilisateur le nombre qui est dans l'accumulateur.</td>
+                        <td>Prendre le nombre qui est dans l'accumulateur et le mettre dans la boîte de sortie.</td>
                     </tr>
                     <tr>
                         <td>100 à 199</td>
