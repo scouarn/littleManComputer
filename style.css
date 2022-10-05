@@ -59,7 +59,7 @@ section .content {
 
 section .content p {
     text-align: justify;
-    text-indent: 3em;
+    text-indent: 1.5em;
     margin: auto;
     padding: 0.5em 1em 0.5em 1em;
 }

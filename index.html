@@ -22,8 +22,8 @@
                 <p> 
                     Le Little Man Computer est un modèle éducatif d'ordinateur qui a été inventé dans les années 60 par le Dr. Stuart Madnick.
                     Il s'agit d'une pièce dans laquelle un petit bonhomme est enfermé avec 100 boîtes aux lettres
-                    numérotées de 0 à 99 et quatre boîtes spéciales marquées Entrée, Sortie, Numéro d'instruction et Accumulateur.
-                    Le numéro d'une boîte est ce qu'on appelle sont adresse.
+                    numérotées de 0 à 99 et quatre boîtes spéciales marquées Entrée, Sortie, Compteur d'instruction et Accumulateur.
+                    Le numéro d'une boîte est ce qu'on appelle son adresse.
                 </p>
                 <p>
                     De manière générale les ordinateurs ne savent utiliser que des 1 et des 0 mais pour des raisons de simplicité le Little Man Computer utilise
@@ -43,17 +43,17 @@
                     il n'y a donc pas de différence entre les instructions et les données.
                 </p>
 
-                <p>TODO: explication pourquoi "little man"</p>
                 <p>TODO: explication I/O</p>
                 <p>TODO: explication sauts</p>
                 <p>TODO: + d'exemples de programmes</p>
                 <p>TODO: sources</p>
 
+
                 <p>
-                    Pour utiliser l'ordinateur, le petit bonhomme a à disposition un tableau avec des instruction.
+                    Pour utiliser l'ordinateur, le petit bonhomme a un tableau avec des instruction.
                     D'abord, il prend le nombre qui se trouve dans la boîte dont le numéro est indiqué par le compteur d'instruction.
                     Ensuite il regarde dans le tableau l'action qu'il doit effectuer.
-                    Enfin, si ce n'était pas l'instruction Arrêt ou Saut, il passe à l'instruction suivante en ajoutant 1 au compteur d'instruction.
+                    Enfin, il passe à l'instruction suivante en ajoutant 1 au compteur d'instruction.
                 </p>
            	</div>
         </section>
@@ -68,6 +68,8 @@
                    avec les deux derniers chiffre qui peuvent donner un numéro de boîte. 
                    Voilà les instructions qu'utilise ma version du Little Man Computer :
                 </p>
+                <p><a href="littleManComputer.pdf" target="_blank">Version PDF</a></p>
+
                 <table id="instructions">
                     <tr> 
                         <th>Code</th>
@@ -121,25 +123,25 @@
                         <td>500 à 599</td>
                         <td>Saut</td>
                         <td>BRA</td>
-                        <td>Changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code.</td>
+                        <td>Mettre dans le compteur d'instruction le nombre formée par les deux derniers chiffres du code. Ne pas incrémenter le compteur d'instruction. </td>
                     </tr>
                     <tr>
                         <td>600 à 699</td>
                         <td>Saut si zéro</td>
                         <td>BRZ</td>
-                        <td>Si la valeur de l'accumulateur est égale à zéro, changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code.</td>
+                        <td>Si la valeur de l'accumulateur est égale à zéro alors faire BRA, sinon incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.</td>
                     </tr>
                     <tr>
                         <td>700 à 799</td>
                         <td>Saut si positif</td>
                         <td>BRP</td>
-                        <td>Si la valeur de l'accumulateur est supérieure ou égale à zéro, changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code.</td>
+                        <td>Si la valeur de l'accumulateur est supérieure ou égale à zéro alors faire BRA, sinon incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.</td>
                     </tr>
                     <tr>
                         <td>800 à 899</td>
                         <td>Saut si négatif</td>
                         <td>BRN</td>
-                        <td>Si la valeur de l'accumulateur est strictement inférieure à zéro, changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code.</td>
+                        <td>Si la valeur de l'accumulateur est strictement inférieure à zéro alors changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code. Incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.</td>
                     </tr>
                 </table>
                 
@@ -150,12 +152,12 @@
             <div class="title">Le simulateur</div>
             <div class="content">
                 <p>
-                    La case jaune indique correspond à la case pointée par 
+                    La case jaune indique la case pointée par 
                     le compteur d'instruction, c'est l'instruction qui va être effectuée
                     en cliquant sur le bouton "Instruction suivante". 
                     À chaque instruction un message apparaît pour expliquer ce qu'il vient de se produire.
                     Le bouton "Remise à zéro" met des zéros dans le compteur et dans l'accumulateur
-                    mais ne modifie pas la mémoire.
+                    mais pas la mémoire.
                 </p>
 
                 <button onclick="step();">Instruction suivante</button>

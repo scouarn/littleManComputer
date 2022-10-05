@@ -29,31 +29,30 @@
 
 \begin{center}
     \LARGE\textbf{Comment fonctionne un ordinateur ?} \\
-    \large Exemple du Little Man Computer.
+    \large Exemple du Little Man Computer. \\
 \end{center}
 
 \normalsize
 Le Little Man Computer est un modèle éducatif d'ordinateur qui a été inventé dans les années 60 par le Dr. Stuart Madnick.
 Il s'agit d'une pièce dans laquelle un petit bonhomme est enfermé avec 100 boîtes aux lettres
-numérotées de 0 à 99 et quatre boîtes spéciales marquées \enquote{Entrée}, \enquote{Sortie}, \enquote{Numéro d'instruction} et \enquote{Accumulateur}.
-Le numéro d'une boîte est ce qu'on appelle sont adresse.
+numérotées de 0 à 99 et quatre boîtes spéciales marquées \enquote{Entrée}, \enquote{Sortie}, \enquote{Compteur d'instruction} et \enquote{Accumulateur}.
+Le numéro d'une boîte est ce qu'on appelle son adresse.
 \par
-Pour utiliser l'ordinateur, le petit bonhomme a à disposition un tableau avec des instruction.
+Pour utiliser l'ordinateur, le petit bonhomme a un tableau avec des instruction.
 D'abord, il prend le nombre qui se trouve dans la boîte dont le numéro est indiqué par le compteur d'instruction.
 Ensuite il regarde dans le tableau l'action qu'il doit effectuer.
-Enfin, si ce n'était pas l'instruction Arrêt ou Saut, il passe à l'instruction suivante en ajoutant 1 au compteur d'instruction.
-
-
-\vfill\par
-Un simulateur de Little Man Computer est disponible sur mon site web :
+Enfin, il passe à l'instruction suivante en ajoutant 1 au compteur d'instruction.
 
 \begin{center}
-\includegraphics[width=4.0cm]{figures/qrcode.png}\\
-\texttt{https://cpu.scouarn.fr}
+\begin{tabular}{m{7cm} m{5cm}}
+    Un simulateur de Little Man Computer est disponible sur mon site web :
+& 
+    \begin{center}
+    \includegraphics[width=3.0cm]{figures/qrcode.png}
+    \texttt{https://cpu.scouarn.fr}
+    \end{center}
+\end{tabular}
 \end{center}
-
-
-\vfill
 
 
 \begin{center}
@@ -69,10 +68,10 @@ Un simulateur de Little Man Computer est disponible sur mon site web :
     \hline 200 à 299 & Chargement      & LDA & Remplacer le contenu de l'accumulateur par la valeur à l'adresse formée par les deux derniers chiffres du code. \\
     \hline 300 à 399 & Addition        & ADD & Ajouter à l'accumulateur la valeur à l'adresse formée par les deux derniers chiffres du code. \\
     \hline 400 à 499 & Soustraction    & SUB & Soustraire à l'accumulateur la valeur à l'adresse formée par les deux derniers chiffres du code. \\
-    \hline 500 à 599 & Saut            & BRA & Changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code. \\
-    \hline 600 à 699 & Saut si zéro    & BRZ & Si la valeur de l'accumulateur est égale à zéro, changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code. \\
-    \hline 700 à 799 & Saut si positif & BRP & Si la valeur de l'accumulateur est supérieure ou égale à zéro, changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code. \\
-    \hline 800 à 899 & Saut si négatif & BRN & Si la valeur de l'accumulateur est strictement inférieure à zéro, changer le numéro d'instruction par le nombre formée par les deux derniers chiffres du code. \\
+    \hline 500 à 599 & Saut            & BRA & Mettre dans le compteur d'instruction le nombre formée par les deux derniers chiffres du code. Ne pas incrémenter le compteur d'instruction. \\
+    \hline 600 à 699 & Saut si zéro    & BRZ & Si la valeur de l'accumulateur est égale à zéro alors faire BRA, sinon incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu. \\
+    \hline 700 à 799 & Saut si positif & BRP & Si la valeur de l'accumulateur est supérieure ou égale à zéro alors faire BRA, sinon incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.\\
+    \hline 800 à 899 & Saut si négatif & BRN & Si la valeur de l'accumulateur est strictement inférieure à zéro alors faire BRA, sinon incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.\\
     \hline 
 \end{tabular}}
 \end{center}

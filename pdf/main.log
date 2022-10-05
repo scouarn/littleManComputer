@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.9.13)  5 OCT 2022 10:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.9.13)  5 OCT 2022 11:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -539,58 +539,58 @@ LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
 (/usr/share/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<figures/qrcode.png, id=1, 1029.8475pt x 1029.8475pt>
-File: figures/qrcode.png Graphic file (type png)
-<use figures/qrcode.png>
-Package pdftex.def Info: figures/qrcode.png  used on input line 51.
-(pdftex.def)             Requested size: 113.81102pt x 113.80214pt.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-2.
-
-(/usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
 7.
 
 (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
 7.
 
 (/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-77.
+47.
 
 (/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-77.
+47.
 
 (/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 77.
+(Font)              <12> on input line 47.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 77.
+(Font)              <8> on input line 47.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 77.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
+(Font)              <6> on input line 47.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 47.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 47.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<figures/qrcode.png, id=1, 1397.22pt x 1397.22pt>
+File: figures/qrcode.png Graphic file (type png)
+<use figures/qrcode.png>
+Package pdftex.def Info: figures/qrcode.png  used on input line 51.
+(pdftex.def)             Requested size: 85.35826pt x 85.34329pt.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
+2.
+
+(/usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/qrcode.png>] (./
@@ -598,15 +598,15 @@ main.aux) )
 Here is how much of TeX's memory you used:
  10347 strings out of 478238
  178274 string characters out of 5850456
- 547156 words of memory out of 5000000
+ 548156 words of memory out of 5000000
  28409 multiletter control sequences out of 15000+600000
  499791 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,11n,84p,369b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 80i,12n,84p,369b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texm
 f-dist/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (1 page, 88664 bytes).
+Output written on main.pdf (1 page, 98614 bytes).
 PDF statistics:
  27 PDF objects out of 1000 (max. 8388607)
  15 compressed objects within 1 object stream

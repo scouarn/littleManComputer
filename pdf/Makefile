@@ -2,9 +2,12 @@
 SVG_FILES := $(wildcard figures/*.svg)
 PDF_FILES := $(patsubst %.svg, %.pdf, $(SVG_FILES))
 
+PDF := ../littleManComputer.pdf
+
 all: $(PDF_FILES)
 	pdflatex -shell-escape main.tex
-	evince main.pdf
+	mv main.pdf $(PDF)
+	evince $(PDF)
 
 %.pdf : %.svg
 	inkscape $<  -o $@ --export-type=pdf
