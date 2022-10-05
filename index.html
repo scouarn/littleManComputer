@@ -43,9 +43,9 @@
                     et l'accumulateur qui stocke le résultat d'une instruction à l'autre. 
                 </p>
 
+                <p>TODO: explication pourquoi "little man"</p>
                 <p>TODO: explication I/O</p>
                 <p>TODO: explication sauts</p>
-                <p>TODO: explication utilisation du simulateur + la case jaune c'est l'instruction...</p>
                 <p>TODO: + d'exemples de programmes</p>
                 <p>TODO: sources</p>
 
@@ -146,8 +146,17 @@
         </section>
 
         <section>
-            <div class="title">Registres et contrôles</div>
+            <div class="title">Le simulateur</div>
             <div class="content">
+                <p>
+                    La case jaune indique correspond à la case pointée par 
+                    le compteur d'instruction, c'est l'instruction qui va être effectuée
+                    en cliquant sur le bouton "Instruction suivante". 
+                    À chaque instruction un message apparaît pour expliquer ce qu'il vient de se produire.
+                    Le bouton "Remise à zéro" met des zéros dans le compteur et dans l'accumulateur
+                    mais ne modifie pas la mémoire.
+                </p>
+
                 <button onclick="step();">Instruction suivante</button>
                 <button onclick="reset_regs();">Remise à zéro</button>
     
@@ -161,13 +170,9 @@
                     <div class="label">Message de l'ordinateur</div>
                     <textarea id="log" readonly rows="3" cols="10"></textarea>
                 </div>
-            </div>
-        </section>
 
-        <section>
-            <div class="title">Mémoire</div>
-            <div class="content">
-                <button onclick="reset_mem();">Remise à zéro</button>
+
+                <button onclick="reset_mem();">Remise à zéro mémoire</button>
                 <button onclick="example(0);">Exemple addition</button>
                 <button onclick="example(0);">Exemple ---</button>
                 <button onclick="example(0);">Exemple ---</button>

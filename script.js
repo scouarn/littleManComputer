@@ -50,7 +50,7 @@ function step() {
     }
     
     function mem_get(a) {
-        const x = parseInt(memory[a].value);
+        const x = parseInt(memory[a].value, 10);
         return isFinite(x) ? x : 0; 
     }
     
@@ -69,7 +69,7 @@ function step() {
         print("HLT : J'ai reçu la commande d'arrêt, j'ai terminé !");
     }
     else if (op == 1) {
-        const inp = parseInt(prompt("Entrée : ", "0"));
+        const inp = parseInt(prompt("Entrez un nombre : ", "0"), 10);
 
         if (isFinite(inp)) {
             acc = inp;
@@ -112,7 +112,7 @@ function step() {
 }
 
 function repair_value(e) {
-    const n = parseInt(e.value);
+    const n = parseInt(e.value, 10);
     if (isNaN(n)) e.value = 0;
     else e.value = Math.floor(n);
 }
