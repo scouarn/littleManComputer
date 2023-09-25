@@ -46,10 +46,9 @@
                 </p>
 
                 <p>Plus d'informations sur la <a href="https://fr.wikipedia.org/wiki/Little_man_computer" target="_blank">page Wikipédia</a> à propos du Little Man Computer.</p>
-           	</div>
+            </div>
         </section>
 
- 
         <section>
             <div class="title">Jeu d'instructions</div>
             <div class="content">
@@ -72,67 +71,67 @@
                         <td>000</td>
                         <td>Arrêt</td>
                         <td>HLT</td>
-                        <td>Arrêter l'exécution du programme, le compteur d'instruction n'est pas incrémenté.</td>
+                        <td style="text-align:left">Arrêter l'exécution du programme, le compteur d'instruction n'est pas incrémenté.</td>
                     </tr>
                     <tr>
                         <td>001</td>
                         <td>Entrée</td>
                         <td>INP</td>
-                        <td>Prendre le nombre qui est dans la boîte d'entrée et le mettre dans l'accumulateur.</td>
+                        <td style="text-align:left">Prendre le nombre qui est dans la boîte d'entrée et le mettre dans l'accumulateur.</td>
                     </tr>
                     <tr>
                         <td>002</td>
                         <td>Sortie</td>
                         <td>OUT</td>
-                        <td>Prendre le nombre qui est dans l'accumulateur et le mettre dans la boîte de sortie.</td>
+                        <td style="text-align:left">Prendre le nombre qui est dans l'accumulateur et le mettre dans la boîte de sortie.</td>
                     </tr>
                     <tr>
                         <td>100 à 199</td>
                         <td>Sauvegarde</td>
                         <td>STA</td>
-                        <td>Prendre le nombre qui est dans l'accumulateur et le mettre à l'adresse formée par les deux derniers chiffres du code.</td>
+                        <td style="text-align:left">Prendre le nombre qui est dans l'accumulateur et le mettre à l'adresse formée par les deux derniers chiffres du code.</td>
                     </tr>
                     <tr>
                         <td>200 à 299</td>
                         <td>Chargement</td>
                         <td>LDA</td>
-                        <td>Prendre le nombre dans la boîte à l'adresse formée par les deux derniers chiffres du code et le mettre dans l'accumulateur.</td>
+                        <td style="text-align:left">Prendre le nombre dans la boîte à l'adresse formée par les deux derniers chiffres du code et le mettre dans l'accumulateur.</td>
                     </tr>
                     <tr>
                         <td>300 à 399</td>
                         <td>Addition</td>
                         <td>ADD</td>
-                        <td>Ajouter à l'accumulateur la valeur à l'adresse formée par les deux derniers chiffres du code.</td>
+                        <td style="text-align:left">Ajouter à l'accumulateur la valeur à l'adresse formée par les deux derniers chiffres du code.</td>
                     </tr>
                     <tr>
                         <td>400 à 499</td>
                         <td>Soustraction</td>
                         <td>SUB</td>
-                        <td>Soustraire à l'accumulateur la valeur à l'adresse formée par les deux derniers chiffres du code.</td>
+                        <td style="text-align:left">Soustraire à l'accumulateur la valeur à l'adresse formée par les deux derniers chiffres du code.</td>
                     </tr>
                     <tr>
                         <td>500 à 599</td>
                         <td>Saut</td>
                         <td>BRA</td>
-                        <td>Mettre dans le compteur d'instruction le nombre formé par les deux derniers chiffres du code. Ne pas incrémenter le compteur d'instruction. </td>
+                        <td style="text-align:left">Mettre dans le compteur d'instruction le nombre formé par les deux derniers chiffres du code. Ne pas incrémenter le compteur d'instruction. </td>
                     </tr>
                     <tr>
                         <td>600 à 699</td>
                         <td>Saut si zéro</td>
                         <td>BRZ</td>
-                        <td>Si la valeur de l'accumulateur est égale à zéro alors faire BRA, sinon incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.</td>
+                        <td style="text-align:left">Si la valeur de l'accumulateur est égale à zéro alors faire BRA, sinon incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.</td>
                     </tr>
                     <tr>
                         <td>700 à 799</td>
                         <td>Saut si positif</td>
                         <td>BRP</td>
-                        <td>Si la valeur de l'accumulateur est supérieure ou égale à zéro alors faire BRA, sinon incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.</td>
+                        <td style="text-align:left">Si la valeur de l'accumulateur est supérieure ou égale à zéro alors faire BRA, sinon incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.</td>
                     </tr>
                     <tr>
                         <td>800 à 899</td>
                         <td>Saut si négatif</td>
                         <td>BRN</td>
-                        <td>Si la valeur de l'accumulateur est strictement inférieure à zéro alors faire BRA, sinon incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.</td>
+                        <td style="text-align:left">Si la valeur de l'accumulateur est strictement inférieure à zéro alors faire BRA, sinon incrémenter le compteur d'instruction uniquement si le saut n'a pas eu lieu.</td>
                     </tr>
                 </table>
                 
